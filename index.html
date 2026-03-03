@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo 2</title>
+    <meta name="description" content="A fast, responsive to‑do app with a clean light theme." />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Skip to app</a>
+
+    <div class="page">
+      <header class="topbar">
+        <div class="brand" aria-label="ToDo 2">
+          <div class="logo" aria-hidden="true">✓</div>
+          <div class="brand-text">
+            <div class="brand-title">ToDo 2</div>
+            <div class="brand-subtitle">Light and fast</div>
+          </div>
+        </div>
+      </header>
+
+      <main id="app" class="app" aria-labelledby="app-title">
+        <section class="card">
+          <div class="card-head">
+            <div>
+              <h1 id="app-title">Your tasks</h1>
+              <p class="muted" id="subtitle">Add, edit, complete, and filter tasks.</p>
+            </div>
+            <div class="stats" aria-live="polite">
+              <span class="pill" id="count-pill">0 items</span>
+              <span class="pill pill-soft" id="remaining-pill">0 left</span>
+            </div>
+          </div>
+
+          <form class="composer" id="todo-form" autocomplete="off">
+            <label class="sr-only" for="todo-input">Add a task</label>
+            <input
+              id="todo-input"
+              name="todo"
+              class="input"
+              type="text"
+              inputmode="text"
+              placeholder="What do you need to do?"
+              maxlength="160"
+              required
+            />
+
+            <button class="btn primary" type="submit" id="add-btn">Add</button>
+          </form>
+
+          <div class="toolbar" role="region" aria-label="Task controls">
+            <div class="filters" role="tablist" aria-label="Filters">
+              <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="chip" type="button" data-filter="active" aria-pressed="false">Active</button>
+              <button class="chip" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+            </div>
+
+            <div class="tools">
+              <label class="sr-only" for="search-input">Search tasks</label>
+              <input
+                id="search-input"
+                class="input input-sm"
+                type="search"
+                placeholder="Search…"
+                autocomplete="off"
+              />
+              <button class="btn" type="button" id="clear-completed">Clear completed</button>
+            </div>
+          </div>
+
+          <div class="list-wrap" aria-live="polite">
+            <ul class="list" id="todo-list" aria-label="Todo list"></ul>
+            <div class="empty" id="empty-state" hidden>
+              <div class="empty-title">No tasks match.</div>
+              <div class="muted">Try a different filter or add something new.</div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer muted">
+          <span>Tip: click <strong>Edit</strong> or press <strong>Enter</strong> while editing to save.</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
